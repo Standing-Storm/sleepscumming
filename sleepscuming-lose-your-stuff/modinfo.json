@@ -22,7 +22,7 @@
     "condition": { "math": [ "has_var(u_sleepscumming_location_variable)" ] },
     "effect": [
       { "u_message": "Reality warps and you are somewhere else.", "popup": true },
-      { "run_eocs": [ "EOC_SLEEPSCUMMING_RETURN_START" ] }
+      { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_START" }
     ]
   },
   {
@@ -31,7 +31,7 @@
     "effect": [
       { "u_add_effect": "incorporeal", "duration": 1 },
       { "u_add_effect": "downed", "duration": 1 },
-      { "run_eocs": [ "EOC_SLEEPSCUMMING_RETURN_HEAL" ] },
+      { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_HEAL" },
       { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_FINALIZE", "time_in_future": "1 seconds" }
     ]
   },
