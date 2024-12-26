@@ -24,7 +24,7 @@
       { "u_message": "Reality warps and you are somewhere else.", "popup": true },
       { "run_eocs": [ "EOC_SLEEPSCUMMING_RETURN_START" ] }
     ]
-  },
+  },
   {
     "type": "effect_on_condition",
     "id": "EOC_SLEEPSCUMMING_RETURN_START",
