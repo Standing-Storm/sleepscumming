@@ -21,6 +21,7 @@
     "eoc_type": "PREVENT_DEATH",
     "condition": { "math": [ "has_var(u_sleepscumming_location_variable)" ] },
     "effect": [
+      "u_prevent_death",
       { "u_message": "Reality warps and you are somewhere else.", "popup": true },
       { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_START" }
     ]
