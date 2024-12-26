@@ -1,0 +1,82 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "sleepscumming_lose_your_stuff",
+    "name": "<color_green>Sleepscumming</color>: the <color_green>keep your stuff</color> version",
+    "authors": [ "Standing-Storm" ],
+    "description": "When oyu die, you go back to the last place you slept.  Your stuff does come with you.",
+    "category": "misc_additions",
+    "dependencies": [ "dda" ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SLEEPSCUMMING_SAVE_LOCATION",
+    "eoc_type": "EVENT",
+    "required_event": "character_falls_asleep",
+    "effect": { "u_location_variable": { "u_val": "sleepscumming_location_variable" }, "min_radius": 0, "max_radius": 0 }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SLEEPSCUMMING_RETURN",
+    "eoc_type": "PREVENT_DEATH",
+    "condition": { "math": [ "has_var(u_sleepscumming_location_variable)" ] },
+    "effect": [
+      { "u_message": "Reality warps and you are somewhere else.", "popup": true },
+      { "run_eocs": [ "EOC_SLEEPSCUMMING_RETURN_START" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SLEEPSCUMMING_RETURN_START",
+    "effect": [
+      { "u_add_effect": "downed", "duration": 1 },
+      { "run_eocs": [ "EOC_SLEEPSCUMMING_RETURN_HEAL" ] },
+      { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_FINALIZE" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SLEEPSCUMMING_RETURN_HEAL",
+    "effect": [
+      { "math": [ "u_hp('ALL') = 999" ] },
+      { "math": [ "u_hp('ALL_MAJOR') = 45" ] },
+      { "math": [ "u_val('thirst') = 0" ] },
+      { "math": [ "u_vitamin('redcells') = 0" ] },
+      { "math": [ "u_vitamin('bad_food') = 0" ] },
+      { "math": [ "u_vitamin('blood') = 0" ] },
+      { "math": [ "u_vitamin('instability') = 0" ] },
+      { "math": [ "u_pain() = 0" ] },
+      { "math": [ "u_val('rad') = 0" ] },
+      { "u_lose_effect": "corroding" },
+      { "u_lose_effect": "onfire" },
+      { "u_lose_effect": "dazed" },
+      { "u_lose_effect": "stunned" },
+      { "u_lose_effect": "venom_blind" },
+      { "u_lose_effect": "formication" },
+      { "u_lose_effect": "blisters" },
+      { "u_lose_effect": "frostbite" },
+      { "u_lose_effect": "frostbite_recovery" },
+      { "u_lose_effect": "wet" },
+      { "u_lose_effect": "slimed" },
+      { "u_lose_effect": "migo_atmosphere" },
+      { "u_lose_effect": "fetid_goop" },
+      { "u_lose_effect": "sap" },
+      { "u_lose_effect": "nausea" },
+      { "u_lose_effect": "bleed" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SLEEPSCUMMING_RETURN_FINALIZE",
+    "effect": [
+      { "u_teleport": { "u_val": "u_sleepscumming_location_variable" } },
+      { "math": [ "u_pain() = 0" ] },
+      {
+        "foreach": "ids",
+        "var": { "context_val": "id" },
+        "target": "vitamin",
+        "effect": [ { "math": [ "u_vitamin(_id) = 0" ] } ]
+      }
+    ]
+  }
+]
