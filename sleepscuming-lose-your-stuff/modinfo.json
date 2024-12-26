@@ -71,7 +71,7 @@
     "type": "effect_on_condition",
     "id": "EOC_SLEEPSCUMMING_RETURN_FINALIZE",
     "effect": [
-      { "u_teleport": { "u_val": "u_sleepscumming_location_variable" } },
+      { "u_teleport": { "u_val": "sleepscumming_location_variable" } },
       { "math": [ "u_pain() = 0" ] },
       {
         "foreach": "ids",
