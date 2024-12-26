@@ -4,7 +4,7 @@
     "id": "sleepscumming_lose_your_stuff",
     "name": "<color_green>Sleepscumming</color>: the <color_red>lose your stuff</color> version",
     "authors": [ "Standing-Storm" ],
-    "description": "When oyu die, you go back to the last place you slept.  Your stuff does not come with you.",
+    "description": "When you die, you go back to the last place you slept.  Your stuff does not come with you.",
     "category": "misc_additions",
     "dependencies": [ "dda" ]
   },
