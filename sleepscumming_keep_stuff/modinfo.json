@@ -5,7 +5,7 @@
     "name": "<color_green>Sleepscumming</color>: the <color_green>keep your stuff</color> version",
     "authors": [ "Standing-Storm" ],
     "description": "When you die, you go back to the last place you slept.  Your stuff does come with you.",
-    "category": "misc_additions",
+    "category": "rebalance",
     "dependencies": [ "dda" ],
     "conflicts": [ "sleepscumming_soulslike_version", "sleepscumming_lose_your_stuff" ]
   },
