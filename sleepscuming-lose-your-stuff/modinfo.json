@@ -6,7 +6,8 @@
     "authors": [ "Standing-Storm" ],
     "description": "When you die, you go back to the last place you slept.  Your stuff does not come with you.",
     "category": "misc_additions",
-    "dependencies": [ "dda" ]
+    "dependencies": [ "dda" ],
+    "conflicts": [ "sleepscumming_soulslike_version", "sleepscumming_keep_your_stuff" ]
   },
   {
     "type": "effect_on_condition",
