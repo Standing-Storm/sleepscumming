@@ -5,7 +5,7 @@
     "name": "<color_green>Sleepscumming</color>: the <color_red>Soulslike penalty</color> version",
     "authors": [ "Standing-Storm" ],
     "description": "When you die, you go back to the last place you slept.  Your stuff does not come with you.  You also suffer a penalty on damage and to your HP until you return to the place you died.",
-    "category": "misc_additions",
+    "category": "rebalance",
     "dependencies": [ "dda" ],
     "conflicts": [ "sleepscumming_keep_your_stuff", "sleepscumming_lose_your_stuff" ]
   },
