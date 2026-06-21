@@ -1,4 +1,4 @@
-[++
+[
   {
     "type": "MOD_INFO",
     "id": "sleepscumming_soulslike_version",
@@ -34,7 +34,8 @@
       { "u_add_effect": "incorporeal", "duration": 1 },
       { "u_add_effect": "downed", "duration": 1 },
       { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_HEAL" },
-      { "u_cast_spell": { "id": "sleepscumming_terrain_transform_spell", "hit_self": true } },
+      { "u_location_variable": { "context_val": "death" } },
+      { "set_furniture": "sleepscumming_gravestone_creation", "location": { "context_val": "death" }, "radius": 0 },
       { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_FINALIZE", "time_in_future": "1 seconds" }
     ]
   },
@@ -85,24 +86,6 @@
     ]
   },
   {
-    "id": "sleepscumming_gravestone_creation",
-    "type": "SPELL",
-    "name": "Make Grave",
-    "description": "Makes a grave.  Spooky!",
-    "valid_targets": [ "ground", "self" ],
-    "effect": "ter_transform",
-    "effect_str": "ter_sleepscumming_grave_creating",
-    "shape": "blast",
-    "max_level": 20,
-    "difficulty": 4,
-    "flags": [ "NO_LEGS", "NO_HANDS", "NO_PROJECTILE" ]
-  },
-  {
-    "type": "ter_furn_transform",
-    "id": "ter_sleepscumming_grave_creating",
-    "furniture": [ { "result": "f_sleepscumming_grave_stone", "message": "" } ]
-  },
-  {
     "type": "effect_type",
     "id": "effect_sleepscumming_soulslike_penalty",
     "name": [ "Split Soul" ],
@@ -151,10 +134,9 @@
     "effect": [
       { "u_lose_effect": "effect_sleepscumming_soulslike_penalty" },
       {
-        "u_message": "You take in a shuddering breath as the metaphorical emptiness within you fades.  You are whole once again.",
+        "u_message": "You take in a shuddering breath as the metaphysical emptiness within you fades.  You are whole once again.",
         "type": "good"
       }
     ]
   }
 ]
-
