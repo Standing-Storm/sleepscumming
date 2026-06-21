@@ -59,6 +59,8 @@
       { "u_lose_effect": "blisters" },
       { "u_lose_effect": "frostbite" },
       { "u_lose_effect": "frostbite_recovery" },
+      { "u_lose_effect": "bite" },
+      { "u_lose_effect": "tpollen" },
       { "u_lose_effect": "wet" },
       { "u_lose_effect": "slimed" },
       { "u_lose_effect": "migo_atmosphere" },
@@ -83,4 +85,3 @@
     ]
   }
 ]
-

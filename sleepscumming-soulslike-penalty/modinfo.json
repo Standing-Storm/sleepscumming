@@ -35,7 +35,7 @@
       { "u_add_effect": "downed", "duration": 1 },
       { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_HEAL" },
       { "u_location_variable": { "context_val": "death" } },
-      { "set_furniture": "sleepscumming_gravestone_creation", "location": { "context_val": "death" }, "radius": 0 },
+      { "set_furniture": "f_sleepscumming_grave_stone", "location": { "context_val": "death" }, "radius": 0 },
       { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_FINALIZE", "time_in_future": "1 seconds" }
     ]
   },
@@ -62,6 +62,7 @@
       { "u_lose_effect": "frostbite" },
       { "u_lose_effect": "frostbite_recovery" },
       { "u_lose_effect": "wet" },
+      { "u_lose_effect": "bite" },
       { "u_lose_effect": "tpollen" },
       { "u_lose_effect": "slimed" },
       { "u_lose_effect": "migo_atmosphere" },
@@ -137,7 +138,13 @@
       {
         "u_message": "You take in a shuddering breath as the metaphysical emptiness within you fades.  You are whole once again.",
         "type": "good"
-      }
+      },
+      { "u_transform_radius": 2, "ter_furn_transform": "ter_sleepscumming_grave_removing" }
     ]
+  },
+  {
+    "type": "ter_furn_transform",
+    "id": "ter_sleepscumming_grave_removing",
+    "furniture": [ { "result": "f_null", "valid_furniture": [ "f_sleepscumming_grave_stone" ] } ]
   }
 ]
