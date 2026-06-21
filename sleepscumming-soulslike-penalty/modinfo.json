@@ -34,8 +34,14 @@
       { "u_add_effect": "incorporeal", "duration": 1 },
       { "u_add_effect": "downed", "duration": 1 },
       { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_HEAL" },
-      { "u_location_variable": { "context_val": "death" } },
-      { "set_furniture": "f_sleepscumming_grave_stone", "location": { "context_val": "death" }, "radius": 0 },
+      {
+        "if": { "math": [ "global_already_a_gravestone != 1" ] },
+        "then": [
+          { "u_location_variable": { "context_val": "death" } },
+          { "set_furniture": "f_sleepscumming_grave_stone", "location": { "context_val": "death" }, "radius": 0 },
+          { "math": [ "global_already_a_gravestone = 1" ] }
+        ]
+      },
       { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_FINALIZE", "time_in_future": "1 seconds" }
     ]
   },
@@ -92,7 +98,7 @@
     "id": "effect_sleepscumming_soulslike_penalty",
     "name": [ "Split Soul" ],
     "desc": [
-      "You avoided death, but at what cost?  Your combat prowess and resilience are penalized until you return to the site of your death."
+      "You avoided death, but at what cost?  Your combat prowess and resilience are penalized until you return to the site of your death."
     ],
     "rating": "bad",
     "enchantments": [
@@ -139,7 +145,8 @@
         "u_message": "You take in a shuddering breath as the metaphysical emptiness within you fades.  You are whole once again.",
         "type": "good"
       },
-      { "u_transform_radius": 2, "ter_furn_transform": "ter_sleepscumming_grave_removing" }
+      { "u_transform_radius": 2, "ter_furn_transform": "ter_sleepscumming_grave_removing" },
+      { "math": [ "global_already_a_gravestone = 0" ] }
     ]
   },
   {
