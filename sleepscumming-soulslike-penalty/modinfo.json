@@ -33,6 +33,17 @@
     "effect": [
       { "u_add_effect": "incorporeal", "duration": 1 },
       { "u_add_effect": "downed", "duration": 1 },
+      {
+        "foreach": "ids",
+        "target": "bodypart",
+        "var": { "context_val": "bodypart" },
+        "effect": [
+          {
+            "run_eocs": "EOC_REGEN_MUTATIONS_STOP_BLEEDING_WOUNDS_EFFECTS",
+            "variables": { "bodypart": { "context_val": "bodypart" } }
+          }
+        ]
+      },
       { "run_eocs": "EOC_SLEEPSCUMMING_RETURN_HEAL" },
       {
         "if": { "math": [ "global_already_a_gravestone != 1" ] },
